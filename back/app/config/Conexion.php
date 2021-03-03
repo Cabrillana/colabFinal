@@ -5,7 +5,7 @@ namespace App\Config;
 class Conexion
 {
   private $host = "localhost";
-  private $database = "colab";
+  private $database = "colabFinal";
   private $user = "root";
   private $password = "";
   public $pdo;

@@ -17,9 +17,36 @@ if(!isset($_GET['url']) || METODO == "OPTIONS"){
 $control = explode('/',$url);
 switch($control[0]) {
 
-  case "ejemplo":
-    $ejemplo = new Controllers\Ejemplo();
-    $ejemplo->fEjemplo();
+  case "municipios":
+    if(METODO == "GET") {
+      $municipio = new Controllers\Municipio();
+      $municipio->obtenerMunicipios();
+    } else {
+      echo "ColabBack";
+      exit();
+    }
+    break;
+  
+  case "visitas":
+    $visita = new Controllers\Visitas();
+    if(METODO == "GET") {
+      $visita->obtenerVisitas();
+    } elseif(METODO == "POST") {
+      $visita->insertarVisita();
+    } else {
+      echo "ColabBack";
+      exit();
+    }
+    break;
+
+  case "contacto":
+    if(METODO == "POST") {
+      $contacto = new Controllers\Contacto();
+      $contacto->insertarContacto();
+    } else {
+      echo "ColabBack";
+      exit();
+    }
     break;
 
     default:
