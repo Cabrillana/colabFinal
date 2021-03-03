@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header text-center">Insertar una entrada en el libro</div>
+      <div class="card-body">
+        <form [formGroup]="formVisita" (ngSubmit)="insertarVisita()">
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Nombre Completo" formControlName="nombreCompleto">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="email" placeholder="Correo Electrónico" formControlName="email">
+          </div>
+          <div class="form-group">
+            <select class="form-control" formControlName="idMunicipioVisitado">
+              <option value="" disabled selected hidden>Selecciona un Municipio de la lista</option>
+              <option *ngFor = "let municipio of listaMunicipios" [value]="municipio.id"> {{municipio.municipio}} </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Municipio de Procedencia" formControlName="municipioProcedencia">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Comentario" formControlName="comentario">
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" [disabled]="formVisita.invalid">Insertar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

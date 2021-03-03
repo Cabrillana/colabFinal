@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <div class="jumbotron text-center">
+      <h1 class="display-2">Libro de visitas</h1>
+      <h2 class="display-4">Provincia de Ciudad Real</h2>
+      <p class="lead">DAWEC 2º Curso</p>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <div class="card">
+      <div class="card-header">Últimas visitas registradas</div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Visitante</th><th>M. Visitado</th><th>M. Procedencia</th><th>Comentario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let visita of ultimasVisitas">
+              <td scope="row">{{ visita.nombreCompleto }}</td>
+              <td>{{ visita.municipioVisitado }}</td>
+              <td>{{ visita.municipioProcedencia }}</td>
+              <td>{{ visita.comentario }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

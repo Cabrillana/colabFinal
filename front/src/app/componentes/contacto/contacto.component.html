@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header text-center">Ponte en contacto con nosotros</div>
+      <div class="card-body">
+        <form [formGroup]="formContacto" (ngSubmit)="insertarContacto()">
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Nombre Completo" formControlName="nombreCompleto">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="email" placeholder="Correo Electrónico" formControlName="email">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Comentario" formControlName="comentario">
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" [disabled]="formContacto.invalid">Contactar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
